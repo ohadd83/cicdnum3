@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "myapp"
+        IMAGE_NAME = "proddevapp"
         DEV_CONTAINER = "myapp-dev"
         PROD_CONTAINER = "myapp-prod"
         IMAGE_TAG = "${BUILD_NUMBER}"
