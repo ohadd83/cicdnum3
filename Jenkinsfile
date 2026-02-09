@@ -28,7 +28,7 @@ pipeline {
                 sh '''
                     docker stop $DEV_CONTAINER || true
                     docker rm $DEV_CONTAINER || true
-                    docker run -d -p 8080:3000 --name $DEV_CONTAINER $IMAGE_NAME:$IMAGE_TAG
+                    docker run -d -p 8085:3000 --name $DEV_CONTAINER $IMAGE_NAME:$IMAGE_TAG
                 '''
             }
         }
@@ -44,7 +44,7 @@ pipeline {
                 sh '''
                     docker stop $PROD_CONTAINER || true
                     docker rm $PROD_CONTAINER || true
-                    docker run -d -p 80:3000 --name $PROD_CONTAINER $IMAGE_NAME:$IMAGE_TAG
+                    docker run -d -p 8086:3000 --name $PROD_CONTAINER $IMAGE_NAME:$IMAGE_TAG
                 '''
             }
         }
